@@ -11,5 +11,6 @@ public class App {
         // L.add("011");
         // L.add("01001");
         // System.out.println(L.isCode());
+        //
     }
 }
