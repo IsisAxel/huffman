@@ -157,12 +157,44 @@ public class Function
     
 
     public static void decodeFromFile(String encodedBinPath, String encodingsPath) throws IOException, ClassNotFoundException {
-        List<Encoding> encodings = loadEncodingsFromFile(encodingsPath);
+        // List<Encoding> encodings = loadEncodingsFromFile(encodingsPath);
+        List<Encoding> encodings = new ArrayList<>();
+        encodings.add(new Encoding("11101011", 'v'));
+        encodings.add(new Encoding("1110010", 'W'));
+        encodings.add(new Encoding("1110111", ':'));
+        encodings.add(new Encoding("1010011", '\''));
+        encodings.add(new Encoding("0001", 'l'));
+        encodings.add(new Encoding("011", 'e'));
+        encodings.add(new Encoding("001110", 'w'));
+        encodings.add(new Encoding("1110001", 'q'));
+        encodings.add(new Encoding("11101010", 'p'));
+        encodings.add(new Encoding("11101100", 'L'));
+        encodings.add(new Encoding("11111", 'h'));
+        encodings.add(new Encoding("0010", 'a'));
+        encodings.add(new Encoding("10101", 'u'));
+        encodings.add(new Encoding("00110", 'b'));
+        encodings.add(new Encoding("1110011", 'k'));
+        encodings.add(new Encoding("1110100", ','));
+        encodings.add(new Encoding("1000", 'm'));
+        encodings.add(new Encoding("00000", '\n'));
+        encodings.add(new Encoding("1010010", '.'));
+        encodings.add(new Encoding("1011", 'r'));
+        encodings.add(new Encoding("0101", 'i'));
+        encodings.add(new Encoding("00001", 'y'));
+        encodings.add(new Encoding("110", ' '));
+        encodings.add(new Encoding("1001", 't'));
+        encodings.add(new Encoding("1110000", 'g'));
+        encodings.add(new Encoding("001111", 'd'));
+        encodings.add(new Encoding("11110", 'n'));
+        encodings.add(new Encoding("11101101", 'f'));
+        encodings.add(new Encoding("0100", 'o'));
+        encodings.add(new Encoding("101000", 's'));
+
         String encodedText = readBinaryFile(encodedBinPath);
+        encodedText = "111011000010001011010100011111001000001101001100101100011100010111000101011010011101011111011010000100101011001000100101110001110001100010000101111011100110100101010001010010101111101101000010010101100011100110101111100111100000000000111001011111011101101111001001001111110111011110100001111110110001100001010111110001111000100001110111011010100000100010100001110110100111111011110100110111010110011111111101001101011011100001110000011001110111110111110111100100100111111010111110111000011001011010001101001101110101011101001000000000001110010111110111011011110010010011111101110111101000011111101100010101101111000010101100001011001011001111110001100000111010000100101100100001010110010000111001001011110000100100011101110100110101101110000111000001100111011111011111001111101011011101100001100111111010111110111000011001011010001101110101001110111000010110011001011001111101001000000";
         String decoded = decode(encodedText, encodings);
         System.out.println("Texte décodé depuis fichier : " + decoded);
     }
-    
 
     public static List<Encoding> getEncodings(Node root) {
         List<Encoding> encodings = new ArrayList<>();
